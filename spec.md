@@ -1,8 +1,11 @@
-JamScript Cheat Sheet
-=====================
+JamScript Spec
+==============
+Version 0.1
 
-This is a JamScript cheat sheet.
-At this stage, it is also serving as a draft spec.
+For more information on JamScript please see
+
+[https://github.com/adamphillips/JamScript](https://github.com/adamphillips/JamScript)
+
 
 Control Characters
 ------------------
