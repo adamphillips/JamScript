@@ -7,8 +7,9 @@ At this stage, it is also serving as a draft spec.
 Control Characters
 ------------------
 
-\# : command. Used to switch between modes.  Currently the only recognised modes are 'Structure' and 'Lyrics'.
+\# : command. Used to switch between modes.
 
+    # Chords (default)
     # Structure
     # Lyrics
 
@@ -136,10 +137,10 @@ is the same as
 
 There are times when the voicing of chords is important or where the name of a chord becomes a bit convoluted. In these cases you can specify exactly which intervals should be played by specifying in paretheses the additional notes to be played. Some examples should make things clearer:
 
-    D7      = D(7)
-    Cmin7   = Cmin(b7)
-    Fmaj7   = F(7)
-    Fmin13  = Fmin(b7 13)
+    D7      = D(7)        = d f# a c
+    Cmin7   = Cmin(b7)    = c eb g bb
+    Fmaj7   = F(7)        = f a c e
+    Fmin13  = Fmin(b7 13) = f ab c eb bb
 
 You can remove notes by prefixing them with a *. Alternatively, you can specify the exact intervals to be played by using square brackets.  In either case, JamScript will also allow for lazy note numbering by assuming that intervals are ordered once an interval has been specified, subsequent intervals will by be higher in pitch.  Some more examples:
 
@@ -342,3 +343,52 @@ would work with the lyrics specified in the same way.  We can use the word as pa
     Verse, Verse, Chorus
     Verse (keys solo), Verse, Chorus
 
+Beats
+-----
+
+The beat behind the tune is as important as the chords being played. JamScript supports a quick and simple way of expressing beats.
+
+To start entering beats type
+
+    # Beats
+
+Sections are defined the same way as with chords. Since most beats are driven by a kick / snare pattern, that's how JamScript interprets them.
+
+    # Beats
+    * Verse
+    k . s . | k k s .
+
+Here we have defined a simple kick / snare pattern to be played over a verse.  The kick drum should be played on the 1st beat of each bar and also on the 2nd beat every second bar. The snare should be played every 3rd beat.  The . indicicates nothing should be played for the 4th beats and the 2nd beat of the 1st bar.  The symbols that you can use to represent beats are as follows:
+
+    .       nothing
+    k       kick
+    s       snare
+    lt      low tom
+    ht      high tom
+    r       ride
+    cr      crash
+    h       hi-hat (closed)
+    ho      hi-hat (open)
+
+You can combine instruments using +
+
+    k+h h k+h h
+    h+(k . s .)
+
+or if you want hi-hats every quaver instead
+
+    h.1/2+(k . s .)
+
+That said, you may just want to use notes (textual not musical) instead
+
+    ! hi-hat every quaver
+    k . s .
+
+{} brackets can be used to group notes (musical not textual) together.
+
+    k . s {. s} | k . s {ht lt ht}
+
+
+## References
+
+- The section on voicings builds on ideas taken from this document [http://ismir2005.ismir.net/proceedings/1080.pdf]
