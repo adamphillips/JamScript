@@ -37,7 +37,7 @@ For example
 
 This would be a valid JamScript document yet straight away most musicians would have a reasonable idea of the structure of the piece and how it should sound (not great in this case but hey, it's just an example!)
 
-The complete spec is available at [http://github.com/adamphillips/JamScript/spec.md](http://github.com/adamphillips/JamScript/spec.md).
+The complete spec is available at [http://github.com/adamphillips/JamScript/blob/master/spec.md](http://github.com/adamphillips/JamScript/blob/master/spec.md).
 
 What's the point?
 -----------------
